@@ -30,7 +30,6 @@ export default {
     text-align: center;
     width: calc(100% / 5 - 2.5rem);
     background-color: orange;
-    border: dashed red 0.5px;
     margin-bottom: 1rem;
 }
 
