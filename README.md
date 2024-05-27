@@ -9,7 +9,7 @@ Avrete un componente padre (es. CardsList) che dichiara l'array nel data e vi ci
 MILESTONE 2
 Spostate i dati in questione in uno store.js, all'interno di un array che chiamerete ad esempio carte.
 Il componente padre (es. CardsList) richiama store.carte e vi cicla per passare il singolo dato al figlio (es. SingleCard).
-Vi chiederete cosa cambia rispetto a prima? Cosa ci guadagno? Nulla! Ma ci tornerà utile per bonus con axios :occhiolino:
+Vi chiederete cosa cambia rispetto a prima? Cosa ci guadagno? Nulla! Ma ci tornerà utile per bonus con axios 
 
 BONUS
 Recuperate questi dati tramite una chiamata axios da effettuare al mount dell'applicazione.
