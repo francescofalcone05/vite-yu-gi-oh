@@ -28,7 +28,7 @@ export default {
         </div>
         <div class="card-container">
 
-            <SingleCard v-for="card in store.filteredList" :description="card.name" :model="card.archetype"
+            <SingleCard v-for="card in store.cards" :description="card.name" :model="card.archetype"
                 :img="card.card_images[0].image_url" />
 
         </div>
