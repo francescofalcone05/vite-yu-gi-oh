@@ -1,12 +1,10 @@
 <script>
-import InputMain from './InputMain.vue';
 import CardList from './CardList.vue';
 
 
 
 export default {
     components: {
-        InputMain,
         CardList,
     },
 
@@ -20,8 +18,6 @@ export default {
 </script>
 
 <template>
-
-    <InputMain />
 
     <CardList />
 

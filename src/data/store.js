@@ -1,7 +1,10 @@
 import { reactive } from 'vue';
 
 const iMieiDati = reactive({
-    cards: []
+    cards: [],
+    filteredList: [],
+    archetypeList: [],
+    sceltaInput: ''
 
 });
 

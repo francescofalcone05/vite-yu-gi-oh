@@ -52,6 +52,6 @@ header {
     width: 20%;
     height: 100%;
     align-content: center;
-    padding-left: 1rem;
+    padding-left: 2rem;
 }
 </style>

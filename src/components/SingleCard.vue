@@ -27,9 +27,8 @@ export default {
 <style scoped>
 .card {
     text-align: center;
-    width: calc(100% / 5 - 2.5rem);
+    width: calc(20% - 0.8rem);
     background-color: orange;
-    margin-bottom: 1rem;
 }
 
 img {

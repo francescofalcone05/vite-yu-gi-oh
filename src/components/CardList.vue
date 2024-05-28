@@ -10,15 +10,12 @@ export default {
     data() {
         return {
             store,
-            cardLink: 'https://db.ygoprodeck.com/api/v7/cardinfo.php?cardset=metal%20raiders&num=20&offset=0',
         }
     },
     methods: {
     },
     mounted() {
-        axios.get(this.cardLink).then((elemento) => {
-            this.store.cards = elemento.data.data
-        });
+
     }
 
 }
@@ -31,7 +28,7 @@ export default {
         </div>
         <div class="card-container">
 
-            <SingleCard v-for="card in store.cards" :description="card.name" :model="card.type"
+            <SingleCard v-for="card in store.filteredList" :description="card.name" :model="card.archetype"
                 :img="card.card_images[0].image_url" />
 
         </div>
@@ -62,5 +59,7 @@ export default {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    width: 100%;
+    gap: 1rem;
 }
 </style>
