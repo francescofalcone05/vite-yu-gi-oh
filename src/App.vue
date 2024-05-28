@@ -24,9 +24,9 @@ export default {
   methods: {
     getSelectInput() {
       this.store.sceltaInput = this.scelta
+      console.log(this.scelta);
       console.log(this.store.sceltaInput);
-      // this.store.filteredList = this.filtraCards
-      // console.log(this.store.filteredList);
+
     }
   },
   created() {
@@ -41,13 +41,13 @@ export default {
   mounted() {
 
   },
-  computed: {
-    // filtraCards: function () {
-    //   return this.store.cards.filter((elemento) => {
-    //     return elemento.archetype.match(this.scelta)
-    //   })
-    // }
-  },
+  // computed: {
+  //   filtraCards: function () {
+  //     return this.store.cards.filter((elemento) => {
+  //       return elemento.archetype.match(this.scelta)
+  //     })
+  //   }
+  // },
 }
 </script>
 
@@ -57,9 +57,9 @@ export default {
 
   <div class="contenitore-input">
 
-    <select @input="getSelectInput()" v-model="scelta" name="" id="">
-      <option value="" disabled selected>Select your archetype</option>
-      <option v-for=" tipo in store.archetypeList" value="">{{ tipo.archetype_name }}</option>
+    <select v-model="store.sceltaInput" name="" id="">
+      <option disabled value="">Select your archetype</option>
+      <option v-for=" tipo in store.archetypeList">{{ tipo.archetype_name }}</option>
     </select>
 
   </div>

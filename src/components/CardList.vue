@@ -24,12 +24,12 @@ export default {
 <template>
     <div class="contenitore">
         <div class="founded-card">
-            <h3>Found {{ store.cards.length }} Card</h3>
+            <h3 v-if="store.cards.length > 0">Found {{ store.cards.length }} Card</h3>
         </div>
         <div class="card-container">
 
-            <SingleCard v-for="card in store.cards" :description="card.name" :model="card.archetype"
-                :img="card.card_images[0].image_url" />
+            <SingleCard v-for="card in store.cards" v-if="store.cards.archetype == store.sceltaInput"
+                :description="card.name" :model="card.archetype" :img="card.card_images[0].image_url" />
 
         </div>
 
