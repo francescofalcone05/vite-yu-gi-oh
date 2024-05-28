@@ -18,5 +18,5 @@ Questa chiamata andrà a scrivere su store.carte che quindi dovrà essere dichia
 L'api da richiamare si trova qui.
 
 BONUS #2
-L'indirizzo che vi ho fornito stampa solo le prime 10 carte. Se volessi visualizzare le prime 20 carte? Oppure le prime 20 carte a partire dalla 15esima? Guardate bene l'indirizzo e fate qualche prova :occhiolino:
+L'indirizzo che vi ho fornito stampa solo le prime 10 carte. Se volessi visualizzare le prime 20 carte? Oppure le prime 20 carte a partire dalla 15esima? Guardate bene l'indirizzo e fate qualche prova 
 Qui trovate anche la documentazione delle API se volete capire bene quali dati aspettarvi.
