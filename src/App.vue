@@ -15,39 +15,45 @@ export default {
   data() {
     return {
       store,
-      cardLink: 'https://db.ygoprodeck.com/api/v7/cardinfo.php?num=100&offset=0',
+      cardLink: 'https://db.ygoprodeck.com/api/v7/cardinfo.php?num=1000&offset=0',
       archeLink: 'https://db.ygoprodeck.com/api/v7/archetypes.php',
-      scelta: '',
-
+      specificArchetype: 'https://db.ygoprodeck.com/api/v7/cardinfo.php?archetype=',
+      scelta: ''
     }
   },
   methods: {
-    getSelectInput() {
-      this.store.sceltaInput = this.scelta
-      console.log(this.scelta);
-      console.log(this.store.sceltaInput);
+    getSpecificList() {
+      if (this.store.sceltaInput != '') {
+        this.scelta = this.store.sceltaInput
+        axios.get("https://db.ygoprodeck.com/api/v7/cardinfo.php?archetype=" + this.scelta).then((elemento) => {
+          this.store.cards = elemento.data.data
+          console.log(elemento.data.data);
+        });
+      }
+      //else if (this.store.sceltaInput == '') {
+      //   axios.get(this.archeLink).then((elemento) => {
+      //     this.store.archetypeList = elemento.data
+      //   });
+      //}
 
     }
+
   },
   created() {
-    axios.get(this.cardLink).then((elemento) => {
-      this.store.cards = elemento.data.data
-    });
     axios.get(this.archeLink).then((elemento) => {
       this.store.archetypeList = elemento.data
 
+    });
+    axios.get(this.cardLink).then((elemento) => {
+      this.store.cards = elemento.data.data
     });
   },
   mounted() {
 
   },
-  // computed: {
-  //   filtraCards: function () {
-  //     return this.store.cards.filter((elemento) => {
-  //       return elemento.archetype.match(this.scelta)
-  //     })
-  //   }
-  // },
+  computed: {
+
+  },
 }
 </script>
 
@@ -57,8 +63,8 @@ export default {
 
   <div class="contenitore-input">
 
-    <select v-model="store.sceltaInput" name="" id="">
-      <option disabled value="">Select your archetype</option>
+    <select @change="getSpecificList()" v-model="store.sceltaInput" name="" id="">
+      <option selected value="">Select your archetype</option>
       <option v-for=" tipo in store.archetypeList">{{ tipo.archetype_name }}</option>
     </select>
 

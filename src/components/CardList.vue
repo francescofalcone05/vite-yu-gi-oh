@@ -15,7 +15,7 @@ export default {
     methods: {
     },
     mounted() {
-
+        console.log(store.cards);
     }
 
 }
@@ -28,13 +28,13 @@ export default {
         </div>
         <div class="card-container">
 
-            <SingleCard v-for="card in store.cards" v-if="store.cards.archetype == store.sceltaInput"
-                :description="card.name" :model="card.archetype" :img="card.card_images[0].image_url" />
+            <SingleCard v-for="card, i in store.cards" :description="card.name" :model="card.archetype"
+                :img="card.card_images[0].image_url" />
 
         </div>
 
     </div>
-
+    <!-- v-show="card.archetype == store.sceltaInput || store.sceltaInput == ''" -->
 
 </template>
 
@@ -58,7 +58,6 @@ export default {
 .card-container {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
     width: 100%;
     gap: 1rem;
 }
